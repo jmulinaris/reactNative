@@ -11,10 +11,12 @@ export const styles = StyleSheet.create({
         paddingTop: StatusBar.currentHeight
     },
     title: {
-        color: "pink",
+        color: "#424D9E",
         fontSize: 20,
-        fontWeight: 20,
+        fontWeight: "bold",
         marginTop: 10,
+        marginBottom: 15,
+        textAlign: "center"
     },
     inputContainer: {
         flexDirection: "row",
@@ -79,11 +81,18 @@ export const styles = StyleSheet.create({
         paddingVertical: 20
     },  
     modalDetailMessage: {
-        fontSize: 14,
+        fontSize: 16,
         color: "#212121"
     },
-    selectedTask: {
-        fontSize: 14,
+    nextEvents: {
+        color: "#424D9E",
+        fontSize: 20,
+        fontWeight: "bold",
+        marginTop: 25,
+        textAlign: "center"
+    },
+    selectedEvent: {
+        fontSize: 16,
         color: "#212121",
         fontWeight: "bold",
         textAlign: "center",
