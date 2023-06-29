@@ -55,7 +55,7 @@ export default function App() {
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
         <View>
-          <Text>CALENDARIO</Text>
+          <Text style={styles.title}>CALENDARIO</Text>
         </View>
         <View style={styles.inputContainer}>
           <TextInput 

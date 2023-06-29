@@ -10,6 +10,12 @@ export const styles = StyleSheet.create({
         marginHorizontal: 20,
         paddingTop: StatusBar.currentHeight
     },
+    title: {
+        color: "pink",
+        fontSize: 20,
+        fontWeight: 20,
+        marginTop: 10,
+    },
     inputContainer: {
         flexDirection: "row",
         justifyContent: "space-between",
