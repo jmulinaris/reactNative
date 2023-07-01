@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { Text, View, Button, SafeAreaView, FlatList, Modal, TouchableOpacity } from 'react-native';
+import { Text, View, SafeAreaView, TouchableOpacity } from 'react-native';
 
-import { InputReminder } from './components';
+import { InputReminder, RemindersList, ModalReminder } from './components';
 import { styles } from './styles';
 
 export default function App() {
@@ -63,31 +63,14 @@ export default function App() {
           onHandlerFocus={onHandlerFocus}
           reminder={reminder}
         />
-        <FlatList
-          data={reminders}
-          renderItem={renderItem}
-          style={styles.listContainer}
-          contentContainerStyle={styles.list}
-          alwaysBounceVertical={false}
-          keyExtractor={(item) => item.id}
-        />
+        <RemindersList data={reminders} renderItem={renderItem} />
       </View>
-      <Modal visible={isVisible} animationType="slide">
-        <View style={styles.modalContainer}>
-          <Text style={styles.modalTitle}>{selectedReminder?.value}</Text>
-          <View style={styles.modalDetailContainer}>
-            <Text style={styles.modalDetailMessage}>Are you sure to complete?</Text>
-          </View>
-          <View style={styles.modalButtonContainer}>
-            <Button title="Cancel" color="#424D9E" onPress={() => setIsVisible(false)} />
-            <Button
-              title="Complete"
-              color="green"
-              onPress={() => onHandleDelete(selectedReminder?.id)}
-            />
-          </View>
-        </View>
-      </Modal>
+      <ModalReminder
+        isVisible={isVisible}
+        setIsVisible={setIsVisible}
+        selectedReminder={selectedReminder}
+        onHandleDelete={onHandleDelete}
+      />
     </SafeAreaView>
   );
 }
