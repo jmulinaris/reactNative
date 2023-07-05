@@ -63,7 +63,7 @@ export default function App() {
           onHandlerFocus={onHandlerFocus}
           reminder={reminder}
         />
-        <RemindersList data={reminders} renderItem={renderItem} />
+        <RemindersList reminders={reminders} renderItem={renderItem} />
       </View>
       <ModalReminder
         isVisible={isVisible}
